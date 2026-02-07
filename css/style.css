@@ -1,0 +1,1264 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Variables
+   ========================================================================== */
+:root {
+    --color-primary: #5d6d58;
+    /* Muted Green (Matcha/Moss) */
+    --color-secondary: #8c7b6c;
+    /* Dried Earth/Rice Bran */
+    --color-accent: #bfa57d;
+    /* Gold/Rice Ear */
+
+    --color-text: #2b2b2b;
+    /* Soft Black (Sumi) */
+    --color-text-light: #6e6e6e;
+    /* Ash Grey */
+    --color-bg: #fdfcf9;
+    /* Washi White (Warm) */
+    --color-white: #ffffff;
+    --color-border: #e6e3dd;
+
+    --font-heading: 'Zen Old Mincho', serif;
+    --font-body: 'Noto Sans JP', sans-serif;
+    --font-serif: 'Noto Serif JP', serif;
+
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* ==========================================================================
+   Base Styles
+   ========================================================================== */
+body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 2.0;
+    /* Increased line-height for breathability */
+    letter-spacing: 0.08em;
+    /* Slightly wider spacing */
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   Layout Utilities
+   ========================================================================== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 20px 0;
+    /* Drastically reduced from 60px */
+}
+
+@media (max-width: 768px) {
+    .section-padding {
+        padding: 20px 0;
+        /* Minimized gap */
+    }
+}
+
+.center-align {
+    text-align: center;
+}
+
+.bg-light {
+    background-color: var(--color-white);
+}
+
+.bg-dark {
+    background-color: #2c2c2c;
+    color: var(--color-white);
+}
+
+.white-text {
+    color: var(--color-white);
+}
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+.section-label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    color: var(--color-secondary);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-secondary);
+    /* Underline style instead of side line */
+}
+
+/* Remove side line styles */
+.section-label::before {
+    display: none;
+}
+
+.center-align .section-label {
+    padding-left: 0;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 50px;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 1.7rem;
+    }
+}
+
+.text-body {
+    margin-bottom: 25px;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    /* Slightly smaller for elegance */
+    line-height: 2.2;
+}
+
+.quote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--color-primary);
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn-primary {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 15px 40px;
+    border-radius: 2px;
+    font-size: 1rem;
+    margin-top: 20px;
+}
+
+.btn-primary:hover {
+    background-color: #3d5a35;
+    opacity: 1;
+}
+
+.btn-primary.disabled {
+    background-color: #999;
+    color: #fff;
+    cursor: not-allowed;
+    opacity: 0.7;
+    pointer-events: none;
+    box-shadow: none;
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 1px solid var(--color-white);
+    color: var(--color-white);
+    padding: 15px 50px;
+    margin-top: 30px;
+}
+
+.btn-outline:hover {
+    background-color: var(--color-white);
+    color: var(--color-text);
+    opacity: 1;
+}
+
+.btn-arrow {
+    position: relative;
+    padding-right: 40px;
+    font-weight: 500;
+}
+
+.btn-arrow::after {
+    content: '→';
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease;
+}
+
+.btn-arrow:hover::after {
+    transform: translateX(5px);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   Header - Gentsuguya Style (Minimal Top Bar)
+   ========================================================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 25px 50px;
+    /* Wider side padding */
+    transition: all 0.6s var(--ease-out);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%);
+    /* Subtle gradient initially */
+}
+
+.header.scrolled {
+    background-color: rgba(253, 252, 249, 0.95);
+    /* Matches body bg */
+    backdrop-filter: blur(5px);
+    padding: 15px 50px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+    /* Very subtle border */
+}
+
+.header.scrolled .logo,
+.header.scrolled .nav-list a,
+.header.scrolled .hamburger span {
+    color: var(--color-text);
+    /* Dark text on scroll */
+}
+
+/* Initial White Text on Hero */
+.logo,
+.nav-list a,
+.hamburger span {
+    color: var(--color-white);
+    transition: color 0.4s ease;
+}
+
+/* Ensure hamburger spans are visible on light bg */
+.header.scrolled .hamburger span {
+    background: var(--color-text);
+}
+
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    /* More distinct but not huge */
+    font-weight: 500;
+    letter-spacing: 0.15em;
+}
+
+.nav-list {
+    display: flex;
+    gap: 50px;
+}
+
+.nav-list a {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    position: relative;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    /* Center underline animation */
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    /* Matches text color */
+    transition: width 0.4s var(--ease-out);
+}
+
+.nav-list a:hover::after {
+    width: 100%;
+}
+
+.btn-contact {
+    border: 1px solid currentColor;
+    padding: 10px 30px;
+    border-radius: 50px;
+    /* Pill shape */
+    transition: all 0.4s ease;
+}
+
+.btn-contact:hover {
+    background-color: var(--color-white);
+    color: var(--color-text) !important;
+    opacity: 1;
+}
+
+/* Hamburger for mobile */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    z-index: 1001;
+}
+
+.hamburger span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: var(--color-text);
+    border-radius: 2px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+    top: 0px;
+}
+
+.hamburger span:nth-child(2) {
+    top: 9px;
+}
+
+.hamburger span:nth-child(3) {
+    top: 18px;
+}
+
+.hamburger.open span:nth-child(1) {
+    top: 9px;
+    transform: rotate(135deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.hamburger.open span:nth-child(3) {
+    top: 9px;
+    transform: rotate(-135deg);
+}
+
+/* ==========================================================================
+   Custom Contact Form
+   ========================================================================== */
+.custom-contact-form {
+    max-width: 640px;
+    margin: 40px auto 0;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--color-text);
+}
+
+.form-group label .required {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-left: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: var(--font-base);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.form-submit .btn-primary {
+    padding: 12px 60px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Will be parallaxed by JS */
+}
+
+.hero-bg img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transform: scale(1.15);
+    transition: opacity 3s ease-in-out, transform 20s ease-out;
+    will-change: transform, opacity;
+}
+
+.hero-bg img.active {
+    opacity: 1;
+    transform: scale(1.0);
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    /* Let clicks pass through if needed */
+}
+
+/* Main Hero Copy - Horizontal Style */
+.hero-copy-main {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    font-weight: 500;
+    color: var(--color-white);
+    letter-spacing: 0.15em;
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    writing-mode: horizontal-tb;
+    /* Horizontal */
+    text-align: center;
+    white-space: nowrap;
+    height: auto;
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0;
+    line-height: 1.8;
+    animation: fadeInHorizontal 2.5s var(--ease-out) forwards;
+    animation-delay: 0.8s;
+}
+
+@keyframes fadeInHorizontal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: blur(5px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Mobile Hero adjustments */
+@media (max-width: 768px) {
+    .hero-content {
+        align-items: center;
+        /* Center vertically since no longer full height vertical text */
+    }
+
+    .hero-copy-main {
+        font-size: 1.8rem;
+        height: auto;
+        letter-spacing: 0.1em;
+        white-space: normal;
+        writing-mode: horizontal-tb;
+        padding: 0 20px;
+    }
+
+    .hero-copy-en {
+        right: auto;
+        bottom: 20%;
+        font-size: 0.7rem;
+    }
+}
+
+.hero-copy-en {
+    position: absolute;
+    bottom: 40px;
+    /* Moved to bottom right or center */
+    right: 60px;
+    left: auto;
+    transform: none;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-family: var(--font-body);
+    writing-mode: vertical-rl;
+    /* Vertical English is stylish */
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--color-white);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    writing-mode: vertical-rl;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay: 3s;
+}
+
+.hero-scroll .line {
+    width: 1px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-scroll .line::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    animation: scrollLine 2.5s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+}
+
+@keyframes scrollLine {
+    0% {
+        transform: translateY(-101%);
+    }
+
+    100% {
+        transform: translateY(101%);
+    }
+}
+
+/* ==========================================================================
+   Message Section
+   ========================================================================== */
+.message-container {
+    text-align: center;
+    max-width: 100%;
+    /* Allow full width centering */
+    display: flex;
+    /* Use flexbox for centering */
+    justify-content: center;
+    /* Center horizontally */
+    flex-direction: column;
+    /* Stack title and body */
+    align-items: center;
+    /* Center items */
+}
+
+.message-sub {
+    font-size: 1.2rem;
+    margin-bottom: 60px;
+    font-weight: 500;
+    color: var(--color-primary);
+}
+
+.message-body.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    /* Increased font size */
+    line-height: 2.5;
+    height: 650px;
+    /* Increased height for longer text */
+    margin: 0 auto;
+    /* Ensure no erratic margins */
+    width: auto;
+    /* Let it define its own width based on content */
+    text-align: left;
+    /* Align text to top of columns */
+}
+
+/* Typing Effect Initial State */
+.typing-target p {
+    visibility: hidden;
+    /* Hide text initially, Layout preserved */
+}
+
+.typing-target.is-typing p {
+    visibility: visible;
+    /* Make visible when typing starts (controlled by JS) */
+}
+
+/* ==========================================================================
+   Dual Layout (Concept & About)
+   ========================================================================== */
+.dual-layout {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.dual-layout.reverse {
+    flex-direction: row-reverse;
+}
+
+.dual-image {
+    flex: 1;
+    position: relative;
+}
+
+.dual-image::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--color-earth);
+    z-index: -1;
+}
+
+.dual-layout.reverse .dual-image::before {
+    left: auto;
+    right: -20px;
+}
+
+.dual-text {
+    flex: 1;
+}
+
+/* ==========================================================================
+   Products Grid
+   ========================================================================== */
+/* ==========================================================================
+   Products Grid - Clean & Minimal
+   ========================================================================== */
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    background-color: transparent;
+    /* Remove white box */
+    width: 45%;
+    max-width: 450px;
+}
+
+.product-card:hover {
+    transform: none;
+    /* No lift, subtle image zoom instead if wanted */
+}
+
+.product-image {
+    width: 100%;
+    height: 480px;
+    /* Taller aspect ratio */
+    overflow: hidden;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease-out);
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.03);
+}
+
+.product-info {
+    padding: 0;
+    text-align: left;
+    /* Left align for modern look */
+}
+
+.product-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    letter-spacing: 0.1em;
+    color: var(--color-text);
+}
+
+.product-desc {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: 25px;
+    line-height: 2.0;
+}
+
+/* ==========================================================================
+   Blog Section & Pages
+   ========================================================================== */
+/* ==========================================================================
+   Blog Section & Pages
+   ========================================================================== */
+.blog-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+    /* Safety wrap */
+}
+
+.blog-card {
+    background-color: transparent;
+    transition: transform 0.6s var(--ease-out);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    box-shadow: none;
+    /* No shadow */
+    width: 30%;
+    /* 3 columns */
+    min-width: 300px;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: none;
+}
+
+.blog-thumb {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+
+.blog-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s var(--ease-out);
+}
+
+.blog-card:hover .blog-thumb img {
+    transform: scale(1.05);
+}
+
+.blog-content {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-date {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.blog-card-title {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.blog-excerpt {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.read-more {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    margin-top: auto;
+}
+
+/* Page Header (Sub pages) */
+.page-header {
+    padding: 150px 0 80px;
+    background-color: var(--color-bg);
+    text-align: center;
+}
+
+.page-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.page-subtitle {
+    color: var(--color-primary);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+}
+
+/* Article Detail */
+.article-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px 100px;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.article-meta {
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+}
+
+.article-thumb-main {
+    width: 100%;
+    height: auto;
+    margin-bottom: 60px;
+}
+
+.article-body {
+    line-height: 2;
+    font-size: 1.05rem;
+}
+
+.article-body p {
+    margin-bottom: 30px;
+}
+
+.article-body h2 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    margin: 60px 0 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.article-body h3 {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    margin: 50px 0 25px;
+}
+
+.article-body img {
+    margin: 40px 0;
+    width: 100%;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 60px;
+}
+
+.page-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ddd;
+    color: var(--color-text);
+}
+
+.page-num.active,
+.page-num:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   Contact & Footer
+   ========================================================================== */
+.contact-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: #222;
+    color: #999;
+    padding: 60px 0 20px;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.footer-logo {
+    color: var(--color-white);
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.footer-nav a:hover {
+    color: var(--color-white);
+}
+
+/* ==========================================================================
+   Loading & Animations
+   ========================================================================== */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.logo-text {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    letter-spacing: 0.5em;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.5;
+    }
+}
+
+/* Reveal Animations */
+/* Reveal Animations */
+.reveal-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+    will-change: opacity, transform;
+}
+
+.reveal-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1.2s ease, transform 1.2s ease-out;
+}
+
+.reveal-text.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Image Wipe Effect */
+.reveal-image {
+    opacity: 0;
+    transform: scale(0.98);
+    transition: opacity 1s ease, transform 1.5s var(--ease-out);
+}
+
+.reveal-image.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Stagger delays */
+.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.delay-300 {
+    transition-delay: 0.3s;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .nav {
+        display: none;
+        /* Implement mobile menu later */
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hero-copy-main {
+        font-size: 1.8rem;
+        /* Smaller for mobile vertical */
+        height: 50vh;
+        letter-spacing: 0.2em;
+        white-space: nowrap;
+        /* Keep it vertical lines */
+        writing-mode: vertical-rl;
+    }
+
+    .hero-copy-en {
+        right: 20px;
+        bottom: 30px;
+        font-size: 0.65rem;
+    }
+
+    .message-body.vertical-text {
+        writing-mode: horizontal-tb;
+        /* Switch to horizontal for readability on small screens if text is long */
+        height: auto;
+        width: 100%;
+        text-align: left;
+        line-height: 2.0;
+        padding: 0 20px;
+    }
+
+    .dual-layout,
+    .dual-layout.reverse {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .dual-image {
+        width: 100%;
+    }
+
+    .dual-image::before {
+        display: none;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+
+/* Dictionary Style for Origin Section */
+.message-body {
+    display: inline-block;
+    /* Allow width to fit content */
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    min-height: 500px;
+    /* Ensure enough height for text lines */
+    margin: 0 auto;
+    /* Center horizontally in parent */
+    writing-mode: vertical-rl;
+    /* Vertical Text */
+    text-orientation: upright;
+    padding: 20px;
+    text-align: left;
+    /* Top align in vertical mode */
+    overflow: hidden;
+    /* Hide all scrollbars */
+}
+
+.dict-block {
+    margin-left: 50px;
+    /* Space between paragraphs */
+    margin-bottom: 0;
+    opacity: 0;
+    width: auto;
+    /* Let width adapt to content in vertical mode */
+
+    /* Fluffy Animation Settings */
+    transform: translateY(60px);
+    transition: opacity 2.5s ease-out, transform 2.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.dict-term-container {
+    margin-left: 50px;
+    margin-bottom: 0;
+    opacity: 0;
+    width: auto;
+    /* Let width adapt */
+
+    /* Reveal Up Override */
+    transform: translateY(40px);
+    transition: opacity 1.5s ease-out, transform 1.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.dict-term-container.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ensure reveal-up actually reveals with new transition */
+.dict-block.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dict-term {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-left: 20px;
+    margin-bottom: 0;
+    color: var(--color-text);
+    border-left: 1px solid var(--color-accent);
+    border-bottom: none;
+    display: inline-block;
+    padding-left: 15px;
+    vertical-align: top;
+}
+
+/* Stagger delays for Origin Section (1.5s steps) */
+.delay-1500 {
+    transition-delay: 1.5s;
+}
+
+.delay-3000 {
+    transition-delay: 3s;
+}
+
+.delay-4500 {
+    transition-delay: 4.5s;
+}
+
+.delay-6000 {
+    transition-delay: 6s;
+}
+
+.delay-7500 {
+    transition-delay: 7.5s;
+}
+
+.dict-desc {
+    font-size: 1rem;
+    line-height: 2.0;
+    color: var(--color-text);
+    /* Hanging indent adjustments */
+    padding-top: 1.8em;
+    text-indent: -1.8em;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .message-body {
+        min-height: 400px;
+        writing-mode: vertical-rl;
+        width: 100%;
+    }
+
+    .dict-block {
+        margin-left: 30px;
+    }
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ★記事のタイトルを入力してください -->
+    <title>記事のタイトル | 農園日誌 | 米良氣農園</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Old+Mincho:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- ヘッダー（変更不要） -->
+    <header class="header" id="header"
+        style="background-color: rgba(255, 255, 255, 0.95); box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding-top: 15px; padding-bottom: 15px;">
+        <div class="header-inner">
+            <h1 class="logo"><a href="index.html">米良氣農園</a></h1>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html#concept">こだわり</a></li>
+                    <li><a href="index.html#products">商品紹介</a></li>
+                    <li><a href="blog.html">農園日誌</a></li>
+                    <li><a href="index.html#about">農園について</a></li>
+                    <li><a href="index.html#contact" class="btn-contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <div class="container">
+                <span class="page-subtitle">Journal</span>
+                <h2 class="page-title">農園日誌</h2>
+            </div>
+        </div>
+
+        <!-- ★ここから記事の内容 -->
+        <section class="article-container">
+            <header class="article-header">
+                <div class="article-meta">
+                    <!-- ★日付を入力 -->
+                    <span class="article-date">2026.00.00</span>
+                    <!-- ★カテゴリーを入力 -->
+                    <span class="article-cat">カテゴリ名</span>
+                </div>
+                <!-- ★記事のタイトルを入力 -->
+                <h1 class="section-title" style="margin-bottom: 30px;">記事のタイトルを<br>ここに入力します</h1>
+            </header>
+
+            <!-- ★メイン画像（imagesフォルダに入れた画像ファイル名を指定） -->
+            <img src="images/ファイル名.jpg" alt="画像の説明" class="article-thumb-main">
+
+            <div class="article-body">
+                <!-- ★本文の段落 -->
+                <p>
+                    ここに本文を入力します。<br>
+                    改行したい場合は行末に &lt;br&gt; を入れます。
+                </p>
+
+                <!-- ★見出し2 -->
+                <h2>中見出し</h2>
+                <p>
+                    ここに本文を入力します。
+                </p>
+
+                <!-- ★詳細画像（必要な場合） -->
+                <img src="images/ファイル名.jpg" alt="画像の説明">
+
+                <!-- ★見出し3（必要な場合） -->
+                <h3>小見出し</h3>
+                <p>
+                    ここに本文を入力します。
+                </p>
+            </div>
+
+            <div class="center-align" style="margin-top: 80px; padding-top: 40px; border-top: 1px solid #eee;">
+                <a href="blog.html" class="btn-arrow">一覧に戻る</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- フッター（変更不要） -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-logo">米良氣農園</div>
+            <ul class="footer-nav">
+                <li><a href="index.html#concept">こだわり</a></li>
+                <li><a href="index.html#products">商品紹介</a></li>
+                <li><a href="blog.html">農園日誌</a></li>
+                <li><a href="index.html#about">農園について</a></li>
+                <li><a href="#">特定商取引法に基づく表記</a></li>
+                <li><a href="#">プライバシーポリシー</a></li>
+            </ul>
+            <div class="copyright">&copy; 2026 Meraki Farm. All Rights Reserved.</div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
