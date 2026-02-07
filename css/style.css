@@ -1391,4 +1391,24 @@ img {
 
 
 
+    /* Faster Animations for Mobile */
+    .delay-1500 {
+        transition-delay: 0.3s;
+    }
+
+    .delay-3000 {
+        transition-delay: 0.6s;
+    }
+
+    .delay-4500 {
+        transition-delay: 0.9s;
+    }
+
+    .delay-6000 {
+        transition-delay: 1.2s;
+    }
+
+    .delay-7500 {
+        transition-delay: 1.5s;
+    }
 }
