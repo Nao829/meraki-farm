@@ -170,9 +170,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // We use 'rss2json' for easier parsing (free tier)
         // Use a CORS proxy to fetch the RSS feed (since note blocks direct browser requests)
         // We use 'rss2json' for easier parsing (free tier)
-        const rssUrl = `https://note.com/${NOTE_ID}/rss`;
+        const rssUrl = `https://note.com/${NOTE_ID}/rss?v=${new Date().getTime()}`;
         // Add cache buster to date
-        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}&t=${new Date().getTime()}`;
+        const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
 
         fetch(apiUrl)
             .then(response => response.json())
