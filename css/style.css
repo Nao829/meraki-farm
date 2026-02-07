@@ -1251,14 +1251,60 @@ img {
     text-align: left;
 }
 
+
+
+/* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
+
+    /* Hero Section Fixes */
+    .hero-copy-main {
+        font-size: 2rem;
+        /* Smaller than desktop 3.2rem */
+        width: 90%;
+        line-height: 1.4;
+    }
+
+    /* Origin Section Fixes */
     .message-body {
         min-height: 400px;
         writing-mode: vertical-rl;
         width: 100%;
+        /* Enable horizontal scroll for vertical text on mobile if needed */
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 20px 10px;
+        /* Align to right side for vertical text start */
+        margin-right: 0;
+        margin-left: auto;
+    }
+
+    /* Hide scrollbar but allow scroll */
+    .message-body::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .message-body::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
     }
 
     .dict-block {
-        margin-left: 30px;
+        margin-left: 20px;
+        /* Reduce spacing */
+        width: auto;
+    }
+
+    .dict-term-container {
+        margin-left: 20px;
+    }
+
+    .dict-term {
+        font-size: 1.4rem;
+        margin-left: 10px;
+    }
+
+    .dict-desc {
+        font-size: 0.9rem;
+        line-height: 1.8;
     }
 }
