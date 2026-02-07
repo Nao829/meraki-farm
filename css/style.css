@@ -1142,10 +1142,58 @@ img {
         grid-template-columns: 1fr;
     }
 
+    .product-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
     .footer-nav {
         flex-direction: column;
         align-items: center;
         gap: 15px;
+    }
+
+    /* Mobile Navigation */
+    .header {
+        padding: 15px 20px;
+        /* Smaller padding on mobile */
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Start hidden off-screen */
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(253, 252, 249, 0.98);
+        /* Almost opaque bg */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        z-index: 1000;
+        /* Behind hamburger */
+    }
+
+    .nav.active {
+        right: 0;
+        /* Slide in */
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .nav-list a {
+        font-size: 1.2rem;
+        color: var(--color-text);
     }
 }
 
@@ -1280,7 +1328,7 @@ img {
         display: block;
     }
 
-    /* Origin Section Fixes - Switch to Horizontal for Readability on Mobile */
+    /* Origin Section Fixes - Switch to Horizontal but Centered for Mobile */
     .message-body {
         writing-mode: horizontal-tb;
         width: 100%;
@@ -1288,14 +1336,15 @@ img {
         white-space: normal;
         display: block;
         overflow: visible;
-        padding: 20px;
+        padding: 40px 20px;
         min-height: auto;
-        text-align: left;
+        text-align: center;
+        /* Center align container */
     }
 
     .dict-block {
         margin-left: 0;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
         width: 100%;
     }
 
@@ -1303,6 +1352,7 @@ img {
         margin-left: 0;
         margin-bottom: 20px;
         width: 100%;
+        text-align: center;
     }
 
     .dict-term {
@@ -1310,13 +1360,18 @@ img {
         border-bottom: 1px solid var(--color-accent);
         padding-left: 0;
         padding-bottom: 10px;
-        display: block;
-        width: 100%;
+        display: inline-block;
+        /* Inline block to center */
+        width: auto;
+        margin: 0 auto;
     }
 
     .dict-desc {
         text-indent: 0;
-        line-height: 1.8;
+        line-height: 2.2;
+        text-align: center;
+        /* Center text */
+        display: block;
     }
 
     /* Product Image Fix - Show Full Image */
@@ -1334,32 +1389,6 @@ img {
         /* Fallback bg */
     }
 
-    .message-body::-webkit-scrollbar {
-        height: 4px;
-    }
 
-    .message-body::-webkit-scrollbar-thumb {
-        background: rgba(0, 0, 0, 0.2);
-        border-radius: 4px;
-    }
 
-    .dict-block {
-        margin-left: 20px;
-        /* Reduce spacing */
-        width: auto;
-    }
-
-    .dict-term-container {
-        margin-left: 20px;
-    }
-
-    .dict-term {
-        font-size: 1.4rem;
-        margin-left: 10px;
-    }
-
-    .dict-desc {
-        font-size: 0.9rem;
-        line-height: 1.8;
-    }
 }

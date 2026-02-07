@@ -17,6 +17,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Burger Menu Logic
+    const burgerMenu = document.getElementById('hamburger');
+    const nav = document.querySelector('.nav');
+
+    if (burgerMenu && nav) {
+        burgerMenu.addEventListener('click', () => {
+            burgerMenu.classList.toggle('open');
+            nav.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+
+        // Close menu when clicking a link
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                burgerMenu.classList.remove('open');
+                nav.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+    }
+
     // Smooth Scroll for Anchors
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
