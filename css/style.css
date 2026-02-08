@@ -1479,3 +1479,116 @@ img {
 .pc-only {
     display: block;
 }
+
+/* ==========================================================================
+   Farm Info List (About Page)
+   ========================================================================== */
+.info-list-container {
+    width: 100%;
+}
+
+.info-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    border-top: 1px solid #ddd;
+    text-align: left;
+}
+
+.info-list dt {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+}
+
+.info-list dd {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+    margin: 0;
+    /* Reset browser default */
+}
+
+/* Mobile Alignment Fixes - FORCE CENTER */
+@media (max-width: 768px) {
+
+    /* Stack Info List and Center */
+    .info-list {
+        display: block;
+        text-align: center;
+        border-top: none;
+        /* Looks better without top border if stacked items have borders */
+    }
+
+    .info-list dt {
+        border-bottom: none;
+        padding-bottom: 5px;
+        display: block;
+        font-size: 1.1rem;
+        color: var(--color-primary);
+        margin-top: 20px;
+        /* Space from previous item */
+        text-align: center;
+        width: 100%;
+    }
+
+    .info-list dt:first-child {
+        margin-top: 0;
+    }
+
+    .info-list dd {
+        padding-top: 5px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        display: block;
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Force Center Alignment for Text Blocks */
+    .text-body,
+    p.text-body,
+    .product-desc,
+    .recipe-desc,
+    .contact-title,
+    .page-title,
+    .page-subtitle,
+    .section-title,
+    .section-label,
+    .hero-copy-en,
+    .message-sub {
+        text-align: center !important;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Specifically center English copy in hero on mobile */
+    .hero-copy-en {
+        right: 0;
+        left: 0;
+        bottom: 80px;
+        width: 100%;
+        writing-mode: horizontal-tb;
+    }
+
+    /* Center Dual Text contents specifically */
+    .dual-text,
+    .dual-text p {
+        text-align: center !important;
+    }
+
+    /* Ensure lists in content are centered if any */
+    .dual-text ul,
+    .dual-text ol {
+        display: inline-block;
+        text-align: left;
+        /* Keep list items left aligned but the block centered? or fully center? */
+        /* For now let's leave lists alone as they might look weird centered */
+    }
+
+    /* Verify Hero specific */
+    .hero-content {
+        justify-content: center;
+        text-align: center;
+    }
+}
