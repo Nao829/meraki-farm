@@ -78,6 +78,45 @@ img {
     transform: translateY(0);
 }
 
+/* Reveal Down (From Top to Bottom) */
+.reveal-down {
+    opacity: 0;
+    transform: translateY(-30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    will-change: opacity, transform;
+}
+
+.reveal-down.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Reveal Left (From Left to Right) */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    will-change: opacity, transform;
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Reveal Right (From Right to Left) */
+.reveal-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    will-change: opacity, transform;
+}
+
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
 /* ==========================================================================
    Layout Utilities
    ========================================================================== */

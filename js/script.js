@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    const revealElements = document.querySelectorAll('.fade-in, .reveal-up, .reveal-text, .reveal-image');
+    const revealElements = document.querySelectorAll('.fade-in, .reveal-up, .reveal-down, .reveal-left, .reveal-right, .reveal-text, .reveal-image');
     revealElements.forEach(el => {
         observer.observe(el);
     });
