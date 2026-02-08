@@ -1653,15 +1653,26 @@ img {
     }
 
     /* Force Blog Card Centering */
+    .blog-grid {
+        justify-content: center;
+        justify-items: center;
+    }
+
     .blog-card {
         text-align: center !important;
         align-items: center !important;
         display: flex !important;
         flex-direction: column !important;
+        margin: 0 auto 40px auto;
+        /* Center the card itself and add spacing */
+        max-width: 400px;
+        /* Prevent it from being too wide */
+        width: 100%;
     }
 
     .blog-thumb {
         margin: 0 auto 15px auto !important;
+        width: 100%;
         /* Center image */
     }
 
@@ -1669,6 +1680,7 @@ img {
         text-align: center !important;
         align-items: center !important;
         padding: 0 10px !important;
+        width: 100%;
     }
 
     .blog-card-title,
