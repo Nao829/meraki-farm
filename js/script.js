@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Note Integration
     // ★★★★ CHANGE THIS TO YOUR NOTE ID ★★★★
-    const NOTE_ID = 'meraki_farm'; // Correct ID for Meraki Farm
+    const NOTE_ID = 'meraki_noen'; // Correct ID provided by user
     // ★★★★★★★★★★★★★★★★★★★★★★★★★★★
 
     const blogList = document.getElementById('blog-list');
