@@ -1,0 +1,391 @@
+/* ==========================================================================
+   Modern Japanese Scroll-telling Styles (Vertical Text & Parallax)
+   ========================================================================== */
+
+/* Variables Override */
+.about-page-body {
+    background-color: #fcfcfc;
+    /* Warm White */
+    color: #333;
+    font-family: 'Zen Old Mincho', serif;
+    overflow-x: hidden;
+}
+
+/* Header Override (Transparent initially, solid on scroll - handled by script.js but ensured here) */
+/* We keep the default header style but ensure it blends well */
+
+/* 1. Hero Section (Slow Zoom & Breathing) */
+.mjp-hero {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mjp-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/hero_slide_3.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    /* Slow Zoom Animation */
+    animation: slowZoom 20s linear infinite alternate;
+}
+
+.mjp-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    /* Slight dim */
+    z-index: 2;
+}
+
+.mjp-hero-content {
+    position: relative;
+    z-index: 3;
+    color: #fff;
+    text-align: center;
+    writing-mode: vertical-rl;
+    /* Vertical Text */
+    text-orientation: upright;
+}
+
+.mjp-subtitle {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.3em;
+    margin-left: 20px;
+    /* Distance from title in vertical mode */
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards 0.5s;
+}
+
+.mjp-title {
+    font-size: 3.5rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    display: inline-block;
+    border-right: 1px solid rgba(255, 255, 255, 0.8);
+    /* Vertical line */
+    padding-right: 20px;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards 1s;
+}
+
+/* 2. Philosophy Section (Parallax & Vertical Text) */
+.mjp-section-philosophy {
+    position: relative;
+    padding: 150px 0;
+    background-color: #fff;
+    background-image: url('../images/section-bg-pattern.png');
+    /* Subtle texture if available, or just white */
+}
+
+/* Background Image Fixed (Parallax Effect) */
+.mjp-parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('../images/about_farmer_tractor.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    /* Faint background */
+}
+
+.mjp-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+}
+
+/* Vertical Layout */
+.mjp-vertical-layout {
+    display: flex;
+    flex-direction: row-reverse;
+    /* Text on right (start), Image on left */
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+    height: 600px;
+    /* Fixed height container for vertical text */
+}
+
+.mjp-text-vertical {
+    writing-mode: vertical-rl;
+    height: 500px;
+    line-height: 2.2;
+    letter-spacing: 0.1em;
+    font-size: 1.1rem;
+}
+
+.mjp-text-vertical h3 {
+    font-size: 2rem;
+    margin-left: 60px;
+    /* Space between title and body in vertical */
+    letter-spacing: 0.2em;
+    color: #333;
+}
+
+.mjp-text-vertical p {
+    margin-left: 20px;
+    color: #555;
+    text-align: justify;
+}
+
+/* Floating Image */
+.mjp-image-floating {
+    width: 400px;
+    height: 550px;
+    object-fit: cover;
+    box-shadow: 20px 20px 0px rgba(0, 0, 0, 0.05);
+    /* Soft shadow offset */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s ease;
+}
+
+.mjp-image-floating.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 3. Story Section (Zigzag Layout with Large Images) */
+.mjp-section-story {
+    padding: 120px 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    /* Slightly cover parallax */
+}
+
+.mjp-story-block {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin-bottom: 150px;
+}
+
+.mjp-story-block.reverse {
+    flex-direction: row-reverse;
+}
+
+.mjp-story-image-wrap {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.mjp-story-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 1.5s ease;
+}
+
+.mjp-story-image-wrap:hover .mjp-story-image {
+    transform: scale(1.05);
+}
+
+.mjp-story-text {
+    flex: 1;
+}
+
+.mjp-label {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: #888;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 50px;
+}
+
+.mjp-label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 40px;
+    height: 1px;
+    background-color: #888;
+}
+
+.mjp-story-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.mjp-story-desc {
+    font-size: 1rem;
+    line-height: 2.2;
+    color: #666;
+}
+
+/* 4. Overview Section (Clean Grid) */
+.mjp-section-overview {
+    padding: 100px 0;
+    background-color: #f7f7f7;
+}
+
+.mjp-overview-grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0;
+    border-top: 1px solid #ddd;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mjp-dt {
+    padding: 25px 30px;
+    border-bottom: 1px solid #ddd;
+    font-weight: bold;
+    color: #333;
+    background-color: #efefef;
+}
+
+.mjp-dd {
+    padding: 25px 30px;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+    background-color: #fff;
+}
+
+/* CTA */
+.mjp-cta-section {
+    padding: 120px 0;
+    text-align: center;
+    background-image: url('../images/hero_slide_1.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    /* Parallax */
+    position: relative;
+    color: #fff;
+}
+
+.mjp-cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.mjp-cta-content {
+    position: relative;
+    z-index: 2;
+}
+
+.mjp-btn {
+    display: inline-block;
+    padding: 15px 50px;
+    border: 1px solid #fff;
+    color: #fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.1em;
+    transition: all 0.3s;
+    margin-top: 30px;
+}
+
+.mjp-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .mjp-hero-content {
+        writing-mode: horizontal-tb;
+    }
+
+    .mjp-title {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+        padding-right: 0;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+    }
+
+    .mjp-subtitle {
+        margin-left: 0;
+        display: block;
+    }
+
+    .mjp-vertical-layout {
+        flex-direction: column-reverse;
+        /* Image top, text bottom */
+        height: auto;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .mjp-text-vertical {
+        writing-mode: horizontal-tb;
+        height: auto;
+        width: 100%;
+    }
+
+    .mjp-text-vertical h3 {
+        margin-left: 0;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+    }
+
+    .mjp-text-vertical p {
+        margin-left: 0;
+    }
+
+    .mjp-image-floating {
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+
+    .mjp-story-block,
+    .mjp-story-block.reverse {
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+/* Animations */
+@keyframes slowZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
