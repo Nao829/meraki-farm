@@ -208,7 +208,7 @@ img {
 
 .quote {
     font-family: var(--font-serif);
-    font-style: italic;
+    font-style: normal;
     font-size: 1.2rem;
     color: var(--color-primary);
 }
