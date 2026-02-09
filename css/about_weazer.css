@@ -1,0 +1,425 @@
+/* ==========================================================================
+   WEAZER Inspired About Page Styles (Minimal & Futuristic)
+   ========================================================================== */
+
+/* Variables Override for About Page Scope */
+.about-page-body {
+    background-color: #f8f8f8;
+    /* Ultra Light Grey */
+    color: #333;
+    /* Dark Grey */
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    /* Clean Sans-Serif */
+    overflow-x: hidden;
+}
+
+/* Header Override (Clean & White) */
+.about-page-body .header {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.about-page-body .logo a,
+.about-page-body .nav-list a {
+    color: #333 !important;
+}
+
+.about-page-body .hamburger span {
+    background-color: #333;
+}
+
+/* Global Typography */
+.weazer-en {
+    font-family: 'Inter', 'Helvetica Neue', sans-serif;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.weazer-jp {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 2.2;
+    letter-spacing: 0.05em;
+}
+
+/* Hero Section (Extreme Minimalism) */
+.weazer-hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.weazer-hero-circle {
+    width: 60vh;
+    height: 60vh;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    animation: scaleIn 1.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.weazer-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.2);
+    animation: zoomOut 10s linear infinite alternate;
+}
+
+.weazer-hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    text-align: center;
+    color: #fff;
+    mix-blend-mode: difference;
+    /* Futuristic text effect */
+}
+
+.weazer-title {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.weazer-subtitle {
+    display: block;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* Specs Decoration (Floating Lines) */
+.weazer-spec-line {
+    position: absolute;
+    background-color: #ccc;
+    z-index: 1;
+}
+
+.line-v {
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 20%;
+    opacity: 0.3;
+}
+
+.line-h {
+    height: 1px;
+    width: 100%;
+    top: 30%;
+    left: 0;
+    opacity: 0.3;
+}
+
+/* Scroll Indicator */
+.weazer-scroll {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    font-size: 0.7rem;
+    transform: rotate(90deg);
+    transform-origin: right bottom;
+}
+
+.weazer-scroll::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 1px;
+    background-color: #333;
+    margin-top: 10px;
+    animation: lineExtend 2s infinite;
+}
+
+
+/* Philosophy Section (Scroll Jack Style) */
+.weazer-philosophy {
+    padding: 150px 0;
+    background-color: #f8f8f8;
+    position: relative;
+}
+
+.weazer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    position: relative;
+}
+
+.weazer-split {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.weazer-sticky-title {
+    position: sticky;
+    top: 150px;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #e0e0e0;
+    /* Very light grey text */
+    line-height: 1;
+    z-index: 1;
+}
+
+.weazer-content-col {
+    width: 60%;
+    margin-left: auto;
+    z-index: 2;
+}
+
+.weazer-card {
+    background-color: #fff;
+    padding: 60px;
+    margin-bottom: 150px;
+    /* Space between cards */
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+    transition: transform 0.6s ease;
+}
+
+.weazer-card:hover {
+    transform: translateY(-10px);
+}
+
+.weazer-card-num {
+    display: block;
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.weazer-heading {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+/* Timeline (Story) */
+.weazer-timeline-section {
+    padding: 100px 0;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+}
+
+.weazer-timeline-item {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 60px;
+    padding: 60px 0;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.weazer-year {
+    font-size: 4rem;
+    font-weight: 100;
+    color: #ddd;
+    font-family: 'Inter', sans-serif;
+}
+
+.weazer-story-content h4 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+/* Overview (Data Grid) */
+.weazer-overview {
+    padding: 120px 0;
+    background-color: #111;
+    color: #fff;
+}
+
+.weazer-data-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background-color: #333;
+    /* Border color */
+    border: 1px solid #333;
+}
+
+.weazer-data-cell {
+    background-color: #111;
+    padding: 40px 20px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.weazer-data-cell:hover {
+    background-color: #1a1a1a;
+}
+
+.weazer-data-label {
+    display: block;
+    font-size: 0.75rem;
+    color: #777;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.weazer-data-value {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+/* CTA */
+.weazer-cta {
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    position: relative;
+}
+
+.weazer-cta-btn {
+    font-size: 5rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: 900;
+    z-index: 2;
+    transition: color 0.3s;
+    mix-blend-mode: color-burn;
+}
+
+.weazer-cta-btn:hover {
+    color: #000;
+}
+
+.weazer-cta-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background-color: #e0ffdb;
+    /* Subtle Green */
+    border-radius: 50%;
+    filter: blur(50px);
+    z-index: 1;
+    animation: pulse 4s infinite;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .weazer-hero-circle {
+        width: 80vw;
+        height: 80vw;
+    }
+
+    .weazer-title {
+        font-size: 2.5rem;
+    }
+
+    .weazer-split {
+        flex-direction: column;
+    }
+
+    .weazer-sticky-title {
+        position: static;
+        margin-bottom: 40px;
+        font-size: 2rem;
+    }
+
+    .weazer-content-col {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .weazer-card {
+        padding: 30px;
+        margin-bottom: 60px;
+    }
+
+    .weazer-timeline-item {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: left;
+    }
+
+    .weazer-year {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    .weazer-data-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .weazer-cta-btn {
+        font-size: 2.5rem;
+    }
+}
+
+/* Keyframes */
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(1.2);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes lineExtend {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+
+    50% {
+        width: 60px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 60px;
+        opacity: 0;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.5;
+    }
+}

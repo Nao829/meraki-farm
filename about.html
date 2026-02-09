@@ -14,7 +14,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/about_kawai.css">
+    <link rel="stylesheet" href="css/about_weazer.css">
 </head>
 
 <body>
@@ -40,106 +40,155 @@
     </header>
 
     <main class="about-page-body">
-        <!-- Hero Section (KAWAI Style) -->
-        <section class="kawai-hero">
-            <div class="kawai-hero-content">
-                <span class="kawai-subtitle">About Us</span>
-                <h2 class="kawai-title">ただ、<br>実直に。</h2>
-                <div class="kawai-scroll-indicator">
-                    <span></span>
-                    <p class="kawai-scroll-text">Scroll</p>
-                </div>
+
+        <!-- Hero Section (Floating Circle) -->
+        <section class="weazer-hero">
+            <div class="weazer-hero-circle">
+                <img src="images/hero_slide_3.jpg" alt="Aerial view of farm" class="weazer-hero-img">
             </div>
+
+            <div class="weazer-hero-text">
+                <h1 class="weazer-title weazer-en">PROJECT<br>MERAKI</h1>
+                <span class="weazer-subtitle weazer-en">New Standard of Agriculture</span>
+            </div>
+
+            <!-- Floating Specs -->
+            <div class="weazer-spec-line line-v"></div>
+            <div class="weazer-spec-line line-h"></div>
+
+            <!-- Scroll -->
+            <div class="weazer-scroll weazer-en">SCROLL TO DISCOVER</div>
         </section>
 
-        <!-- Section 1: Philosophy (Asymmetrical Grid) -->
-        <section class="kawai-section">
-            <div class="kawai-container">
-                <div class="kawai-grid">
-                    <div class="kawai-image-wrapper reveal-image">
-                        <img src="images/hero_slide_3.jpg" alt="恵那の空と田んぼ" class="kawai-image">
-                    </div>
-                    <div class="kawai-text-content">
-                        <h3 class="kawai-heading reveal-text" style="border-color: #bfa57d;">米に良い氣を<br>込めて。</h3>
-                        <p class="kawai-paragraph fade-in delay-200">
+        <!-- Philosophy (Scroll Jack / Split Layout) -->
+        <section class="weazer-philosophy">
+            <div class="weazer-container weazer-split">
+                <div class="weazer-sticky-title weazer-en">
+                    WHY<br>WE<br>FARM
+                </div>
+
+                <div class="weazer-content-col">
+                    <!-- Card 1 -->
+                    <div class="weazer-card reveal-up">
+                        <span class="weazer-card-num weazer-en">01 : ORIGIN</span>
+                        <h2 class="weazer-heading weazer-jp">子供たちの未来に、<br>誇れる食を。</h2>
+                        <p class="weazer-jp">
                             「自分の子供に、胸を張って食べさせられるものを作りたい」<br>
-                            それが、米良氣農園のすべての原点です。
+                            それが、私たちのプロジェクトの原点です。<br>
+                            効率や利益よりも、安心と美味しさを最優先する。<br>
+                            それは、決して特別なことではなく、本来あるべき姿への回帰です。
                         </p>
-                        <p class="kawai-paragraph fade-in delay-400">
-                            私たちの農園名「米良氣」。<br>
-                            これはギリシャ語の「MERAKI」という<br class="sp-only">言葉から発想を得ました。<br>
-                            MERAKIとは、創造性や魂、そして愛情を込めて<br class="sp-only">何かを行うという意味を持つ美しい言葉です。<br>
-                            この「MERAKI」の響きに、<br class="sp-only">私たちが大切に育てている<br class="sp-only">「米」に<br
-                                class="sp-only">「良い氣」<br class="sp-only">が満ちてほしいとの願いを込め<br class="sp-only">「米良氣」と名付けました。
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="weazer-card reveal-up">
+                        <span class="weazer-card-num weazer-en">02 : CONCEPT</span>
+                        <h2 class="weazer-heading weazer-jp">MERAKIという<br>システム。</h2>
+                        <p class="weazer-jp">
+                            農園名「米良氣（MERAKI）」は、ギリシャ語で<br>
+                            「魂と愛情を込めて創造する」ことを意味します。<br>
+                            私たちはこの言葉を、単なる精神論ではなく、<br>
+                            土壌、水、そして人の手が循環する<br>
+                            一つの「システム」として捉えています。
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="weazer-card reveal-up">
+                        <span class="weazer-card-num weazer-en">03 : METHOD</span>
+                        <h2 class="weazer-heading weazer-jp">自然のアルゴリズムに<br>従う。</h2>
+                        <p class="weazer-jp">
+                            農薬や化学肥料という外部入力を遮断し、<br>
+                            その土地が持つ本来のポテンシャル（地力）を最大化する。<br>
+                            自然栽培とは、複雑な自然界のアルゴリズムを<br>
+                            読み解き、最適解を導き出すプロセスです。
                         </p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 2: Farmer's Story (Dark bg, centered text) -->
-        <section class="kawai-section" style="background-color: #0f0f0f;">
-            <div class="kawai-container">
-                <div class="kawai-grid" style="direction: rtl;"> <!-- Reverse grid for visual interest -->
-                    <div class="kawai-image-wrapper reveal-image" style="direction: ltr;">
-                        <img src="images/about_farmer_tractor.jpg" alt="トラクターと農園主" class="kawai-image"
-                            style="filter: sepia(20%) grayscale(50%);">
+        <!-- Story (Timeline) -->
+        <section class="weazer-timeline-section">
+            <div class="weazer-container">
+                <h3 class="weazer-en"
+                    style="font-size: 2rem; margin-bottom: 60px; font-weight: 900; letter-spacing: -0.05em;">TIMELINE
+                </h3>
+
+                <div class="weazer-timeline-item reveal-left">
+                    <span class="weazer-year">2023</span>
+                    <div class="weazer-story-content">
+                        <h4 class="weazer-jp">The Migration - 移住</h4>
+                        <p class="weazer-jp">都会というシステムからログアウトし、岐阜県恵那市中野方町へ。<br>新しいライフスタイルの実装を開始。</p>
                     </div>
-                    <div class="kawai-text-content" style="direction: ltr; padding-right: 40px; text-align: right;">
-                        <!-- Right align text for contrast -->
-                        <h3 class="kawai-heading reveal-text"
-                            style="border-left: none; border-right: 2px solid #bfa57d; padding-left: 0; padding-right: 30px;">
-                            この地だから<br>できること。</h3>
-                        <p class="kawai-paragraph fade-in delay-200">
-                            2023年、私たちは家族で<br class="sp-only">岐阜県恵那市中野方町へ移住しました。<br>
-                            都会の喧騒を離れ、自然の中で子供を育てたい。<br>
-                            そして、自分たちの手で食べるものを作りたい。<br>
-                            そんな想いからの決断でした。
-                        </p>
-                        <p class="kawai-paragraph fade-in delay-400">
-                            初めての土地、初めての農業。<br>
-                            地域の方々に助けられながら、<br class="sp-only">試行錯誤の毎日です。<br>
-                            中野方町の美しい棚田と、清らかな水。<br>
-                            この素晴らしい環境を守り継いでいくことも、<br>
-                            今の私たちの使命だと感じています。
-                        </p>
+                </div>
+
+                <div class="weazer-timeline-item reveal-left delay-200">
+                    <span class="weazer-year">2024</span>
+                    <div class="weazer-story-content">
+                        <h4 class="weazer-jp">Trial & Error - 試行</h4>
+                        <p class="weazer-jp">未知の土地での挑戦。地域コミュニティとの接続。<br>棚田という伝統的インフラの再生に着手。</p>
+                    </div>
+                </div>
+
+                <div class="weazer-timeline-item reveal-left delay-400">
+                    <span class="weazer-year">2025</span>
+                    <div class="weazer-story-content">
+                        <h4 class="weazer-jp">Expansion - 展開</h4>
+                        <p class="weazer-jp">自然栽培米の収穫増。古民家再生プロジェクトの始動。<br>「食べる」だけでなく「体験する」農園へ。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 3: Overview (Grid Table) -->
-        <section class="kawai-section">
-            <div class="kawai-container" style="max-width: 800px;">
-                <h3 class="kawai-story-title reveal-down" style="display: block; text-align: center;">農園概要</h3>
+        <!-- Overview (Data Grid) -->
+        <section class="weazer-overview">
+            <div class="weazer-container">
+                <h3 class="weazer-en" style="margin-bottom: 40px; color: #777;">DATA SHEET</h3>
 
-                <div class="kawai-overview-grid fade-in delay-200">
-                    <div class="kawai-dt">屋号</div>
-                    <div class="kawai-dd">米良氣農園（めらき のうえん）</div>
-
-                    <div class="kawai-dt">所在地</div>
-                    <div class="kawai-dd">〒509-8231<br>岐阜県恵那市中野方町4163</div>
-
-                    <div class="kawai-dt">事業内容</div>
-                    <div class="kawai-dd">自然栽培米（コシヒカリ、古代米）の生産・販売<br>季節野菜の生産・販売<br>ハーブの生産・販売（予定）<br>農業体験・見学</div>
-
-                    <div class="kawai-dt">耕作面積</div>
-                    <div class="kawai-dd">約 0.5 ha（現在拡大中）</div>
+                <div class="weazer-data-grid">
+                    <div class="weazer-data-cell">
+                        <span class="weazer-data-label">NAME</span>
+                        <div class="weazer-data-value weazer-jp">米良氣農園</div>
+                    </div>
+                    <div class="weazer-data-cell">
+                        <span class="weazer-data-label">LOCATION</span>
+                        <div class="weazer-data-value weazer-en">ENA, GIFU</div>
+                    </div>
+                    <div class="weazer-data-cell">
+                        <span class="weazer-data-label">AREA</span>
+                        <div class="weazer-data-value weazer-en">0.5 ha +</div>
+                    </div>
+                    <div class="weazer-data-cell">
+                        <span class="weazer-data-label">CROP</span>
+                        <div class="weazer-data-value weazer-jp">KOSHIHIKARI</div>
+                    </div>
+                    <div class="weazer-data-cell">
+                        <span class="weazer-data-label">METHOD</span>
+                        <div class="weazer-data-value weazer-jp">NATURAL FARMING</div>
+                    </div>
+                    <div class="weazer-data-cell">
+                        <span class="weazer-data-label">CATEGORY</span>
+                        <div class="weazer-data-value weazer-en">AGRI / LIFESTYLE</div>
+                    </div>
+                    <div class="weazer-data-cell">
+                        <span class="weazer-data-label">ESTABLISHED</span>
+                        <div class="weazer-data-value weazer-en">2023</div>
+                    </div>
+                    <div class="weazer-data-cell">
+                        <span class="weazer-data-label">STATUS</span>
+                        <div class="weazer-data-value weazer-en">ACTIVE</div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact CTA (Atmospheric) -->
-        <section class="kawai-footer-cta">
-            <div class="kawai-container">
-                <h3 class="kawai-title" style="font-size: 2.5rem; margin-bottom: 20px;">Experience</h3>
-                <p class="kawai-paragraph" style="color: #fff; max-width: 600px; margin: 0 auto 40px auto;">
-                    田植えや稲刈りの季節には、農業体験イベントも不定期で開催しています。<br>
-                    土に触れ、風を感じる時間を。
-                </p>
-                <a href="index.html#contact" class="kawai-btn">お問い合わせ</a>
-            </div>
-        </section>
+        <!-- Contact CTA (Giant Text) -->
+        <div class="weazer-cta">
+            <div class="weazer-cta-bg"></div>
+            <a href="index.html#contact" class="weazer-cta-btn weazer-en">CONTACT</a>
+        </div>
+
     </main>
 
     <footer class="footer">
