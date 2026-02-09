@@ -4,31 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>私たちについて | 米良氣農園（めらきのうえん）</title>
-    <!-- Google Fonts -->
+    <title>About | 米良氣農園</title>
+    <meta name="description" content="米良氣農園（めらきのうえん）の想い、農園主のストーリー、農園概要について。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;500;600&family=Zen+Old+Mincho:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Old+Mincho:wght@400;500;600;700;900&display=swap"
         rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/about_weazer.css">
 </head>
 
 <body>
-    <header class="header" id="header"
-        style="background-color: rgba(255, 255, 255, 0.95); box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding-top: 15px; padding-bottom: 15px;">
+    <header class="header" id="header">
         <div class="header-inner">
-            <h1 class="logo"><a href="index.html">米良氣農園</a></h1>
+            <h1 class="logo">
+                <a href="index.html">米良氣</a>
+            </h1>
             <nav class="nav">
                 <ul class="nav-list">
-                    <li><a href="index.html#concept">こだわり</a></li>
-                    <li><a href="index.html#products">商品紹介</a></li>
-                    <li><a href="https://note.com/meraki_noen" target="_blank">農園日誌 (note)</a></li>
-                    <li><a href="about.html">私たちについて</a></li>
-                    <li><a href="index.html#contact" class="btn-contact">お問い合わせ</a></li>
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item"><a href="about.html">About</a></li>
+                    <li class="nav-item"><a href="index.html#products">Products</a></li>
+                    <li class="nav-item"><a href="index.html#journal">Journal</a></li>
+                    <li class="nav-item"><a href="index.html#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="hamburger" id="hamburger">
@@ -39,173 +39,125 @@
         </div>
     </header>
 
-    <main class="about-page-body">
-
-        <!-- Hero Section (Floating Circle) -->
-        <section class="weazer-hero">
-            <div class="weazer-hero-circle">
-                <img src="images/hero_slide_3.jpg" alt="Aerial view of farm" class="weazer-hero-img">
+    <main>
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="container">
+                <span class="page-subtitle">About Us</span>
+                <h2 class="page-title">私たちについて</h2>
+                <p>自然とともに生きる。<br>米良氣農園の想いと、歩み。</p>
             </div>
-
-            <div class="weazer-hero-text">
-                <h1 class="weazer-title weazer-en">PROJECT<br>MERAKI</h1>
-                <span class="weazer-subtitle weazer-en">New Standard of Agriculture</span>
-            </div>
-
-            <!-- Floating Specs -->
-            <div class="weazer-spec-line line-v"></div>
-            <div class="weazer-spec-line line-h"></div>
-
-            <!-- Scroll -->
-            <div class="weazer-scroll weazer-en">SCROLL TO DISCOVER</div>
-        </section>
-
-        <!-- Philosophy (Scroll Jack / Split Layout) -->
-        <section class="weazer-philosophy">
-            <div class="weazer-container weazer-split">
-                <div class="weazer-sticky-title weazer-en">
-                    WHY<br>WE<br>FARM
-                </div>
-
-                <div class="weazer-content-col">
-                    <!-- Card 1 -->
-                    <div class="weazer-card reveal-up">
-                        <span class="weazer-card-num weazer-en">01 : ORIGIN</span>
-                        <h2 class="weazer-heading weazer-jp">子供たちの未来に、<br>誇れる食を。</h2>
-                        <p class="weazer-jp">
-                            「自分の子供に、胸を張って食べさせられるものを作りたい」<br>
-                            それが、私たちのプロジェクトの原点です。<br>
-                            効率や利益よりも、安心と美味しさを最優先する。<br>
-                            それは、決して特別なことではなく、本来あるべき姿への回帰です。
-                        </p>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="weazer-card reveal-up">
-                        <span class="weazer-card-num weazer-en">02 : CONCEPT</span>
-                        <h2 class="weazer-heading weazer-jp">MERAKIという<br>システム。</h2>
-                        <p class="weazer-jp">
-                            農園名「米良氣（MERAKI）」は、ギリシャ語で<br>
-                            「魂と愛情を込めて創造する」ことを意味します。<br>
-                            私たちはこの言葉を、単なる精神論ではなく、<br>
-                            土壌、水、そして人の手が循環する<br>
-                            一つの「システム」として捉えています。
-                        </p>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="weazer-card reveal-up">
-                        <span class="weazer-card-num weazer-en">03 : METHOD</span>
-                        <h2 class="weazer-heading weazer-jp">自然のアルゴリズムに<br>従う。</h2>
-                        <p class="weazer-jp">
-                            農薬や化学肥料という外部入力を遮断し、<br>
-                            その土地が持つ本来のポテンシャル（地力）を最大化する。<br>
-                            自然栽培とは、複雑な自然界のアルゴリズムを<br>
-                            読み解き、最適解を導き出すプロセスです。
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Story (Timeline) -->
-        <section class="weazer-timeline-section">
-            <div class="weazer-container">
-                <h3 class="weazer-en"
-                    style="font-size: 2rem; margin-bottom: 60px; font-weight: 900; letter-spacing: -0.05em;">TIMELINE
-                </h3>
-
-                <div class="weazer-timeline-item reveal-left">
-                    <span class="weazer-year">2023</span>
-                    <div class="weazer-story-content">
-                        <h4 class="weazer-jp">The Migration - 移住</h4>
-                        <p class="weazer-jp">都会というシステムからログアウトし、岐阜県恵那市中野方町へ。<br>新しいライフスタイルの実装を開始。</p>
-                    </div>
-                </div>
-
-                <div class="weazer-timeline-item reveal-left delay-200">
-                    <span class="weazer-year">2024</span>
-                    <div class="weazer-story-content">
-                        <h4 class="weazer-jp">Trial & Error - 試行</h4>
-                        <p class="weazer-jp">未知の土地での挑戦。地域コミュニティとの接続。<br>棚田という伝統的インフラの再生に着手。</p>
-                    </div>
-                </div>
-
-                <div class="weazer-timeline-item reveal-left delay-400">
-                    <span class="weazer-year">2025</span>
-                    <div class="weazer-story-content">
-                        <h4 class="weazer-jp">Expansion - 展開</h4>
-                        <p class="weazer-jp">自然栽培米の収穫増。古民家再生プロジェクトの始動。<br>「食べる」だけでなく「体験する」農園へ。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Overview (Data Grid) -->
-        <section class="weazer-overview">
-            <div class="weazer-container">
-                <h3 class="weazer-en" style="margin-bottom: 40px; color: #777;">DATA SHEET</h3>
-
-                <div class="weazer-data-grid">
-                    <div class="weazer-data-cell">
-                        <span class="weazer-data-label">NAME</span>
-                        <div class="weazer-data-value weazer-jp">米良氣農園</div>
-                    </div>
-                    <div class="weazer-data-cell">
-                        <span class="weazer-data-label">LOCATION</span>
-                        <div class="weazer-data-value weazer-en">ENA, GIFU</div>
-                    </div>
-                    <div class="weazer-data-cell">
-                        <span class="weazer-data-label">AREA</span>
-                        <div class="weazer-data-value weazer-en">0.5 ha +</div>
-                    </div>
-                    <div class="weazer-data-cell">
-                        <span class="weazer-data-label">CROP</span>
-                        <div class="weazer-data-value weazer-jp">KOSHIHIKARI</div>
-                    </div>
-                    <div class="weazer-data-cell">
-                        <span class="weazer-data-label">METHOD</span>
-                        <div class="weazer-data-value weazer-jp">NATURAL FARMING</div>
-                    </div>
-                    <div class="weazer-data-cell">
-                        <span class="weazer-data-label">CATEGORY</span>
-                        <div class="weazer-data-value weazer-en">AGRI / LIFESTYLE</div>
-                    </div>
-                    <div class="weazer-data-cell">
-                        <span class="weazer-data-label">ESTABLISHED</span>
-                        <div class="weazer-data-value weazer-en">2023</div>
-                    </div>
-                    <div class="weazer-data-cell">
-                        <span class="weazer-data-label">STATUS</span>
-                        <div class="weazer-data-value weazer-en">ACTIVE</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact CTA (Giant Text) -->
-        <div class="weazer-cta">
-            <div class="weazer-cta-bg"></div>
-            <a href="index.html#contact" class="weazer-cta-btn weazer-en">CONTACT</a>
         </div>
 
+        <!-- Section 1: Philosophy -->
+        <section class="section-padding">
+            <div class="container dual-layout">
+                <div class="dual-image reveal-image">
+                    <img src="images/hero_slide_3.jpg" alt="恵那の空と田んぼ">
+                </div>
+                <div class="dual-text">
+                    <h3 class="section-title reveal-text">米に良い氣を込めて。</h3>
+                    <p class="text-body fade-in delay-200">
+                        「自分の子供に、胸を張って食べさせられるものを作りたい」<br>
+                        それが、米良氣農園のすべての原点です。
+                    </p>
+
+                    <p class="text-body fade-in delay-400">私たちの農園名「米良氣」。<br>これはギリシャ語の「MERAKI」という<br
+                            class="sp-only">言葉から発想を得ました。<br>
+                        MERAKIとは、創造性や魂、そして愛情を込めて<br class="sp-only">何かを行うという意味を持つ美しい言葉です。<br>
+                        この「MERAKI」の響きに、<br class="sp-only">私たちが大切に育てている<br class="sp-only">「米」に<br
+                            class="sp-only">「良い氣」<br class="sp-only">が満ちてほしいとの願いを込め<br class="sp-only">「米良氣」と名付けました</p>
+
+                    <p class="text-body fade-in delay-600">
+                        食べることは、生きること。<br>
+                        私たちの体は、食べたもので作られています。<br>
+                        だからこそ、毎日口にするお米は、<br class="sp-only">ごまかしのない本物でありたい。
+                    </p>
+                    <p class="text-body fade-in delay-800">
+                        農薬や化学肥料に頼らず、<br class="sp-only">自然の循環の中で育てること。<br>
+                        効率よりも、安心と美味しさを優先すること。<br>
+                        決して楽な道のりではありませんが、<br>
+                        私たちは今日も土と向き合っています。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Farmer's Story -->
+        <section class="section-padding bg-light">
+            <div class="container dual-layout reverse">
+                <div class="dual-image reveal-image">
+                    <img src="images/about_farmer_tractor.jpg" alt="トラクターと農園主">
+                </div>
+                <div class="dual-text">
+                    <span class="section-label reveal-text">Story</span>
+                    <h3 class="section-title reveal-text">この地だからできること。</h3>
+                    <p class="text-body fade-in delay-200">
+                        2023年、私たちは家族で<br class="sp-only">岐阜県恵那市中野方町へ移住しました。<br>
+                        都会の喧騒を離れ、自然の中で子供を育てたい。<br>
+                        そして、自分たちの手で食べるものを作りたい。<br>
+                        そんな想いからの決断でした。
+                    </p>
+                    <p class="text-body fade-in delay-400">
+                        初めての土地、初めての農業。<br>
+                        地域の方々に助けられながら、<br class="sp-only">試行錯誤の毎日です。<br>
+                        中野方町の美しい棚田と、清らかな水。<br>
+                        この素晴らしい環境を守り継いでいくことも、<br>
+                        今の私たちの使命だと感じています。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Overview -->
+        <section class="section-padding">
+            <div class="container" style="max-width: 800px;">
+                <h3 class="section-title center-align" style="margin-bottom: 50px;">農園概要</h3>
+                <dl class="info-list">
+                    <dt>屋号</dt>
+                    <dd>米良氣農園（めらき のうえん）</dd>
+
+                    <dt>所在地</dt>
+                    <dd>〒509-8231<br>岐阜県恵那市中野方町4163</dd>
+
+                    <dt>事業内容</dt>
+                    <dd>
+                        自然栽培米（コシヒカリ、古代米）の生産・販売<br>季節野菜の生産・販売<br>ハーブの生産・販売（予定）<br>農業体験・見学<br>古民家民泊（準備中）
+                    </dd>
+
+                    <dt>耕作面積</dt>
+                    <dd>約 0.5 ha（現在拡大中）</dd>
+                </dl>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="section-padding bg-dark center-align white-text">
+            <h3 class="contact-title" style="font-size: 1.8rem;">農業体験・見学について</h3>
+            <p style="margin-bottom: 30px; opacity: 0.8;">
+                田植えや稲刈りの季節には、農業体験イベントも不定期で開催しています。<br>
+                興味のある方は、ぜひお問い合わせいただくか、<br>
+                農園日誌（ブログ）での告知をご確認ください。
+            </p>
+            <a href="index.html#contact" class="btn-outline">お問い合わせはこちら</a>
+        </section>
     </main>
 
     <footer class="footer">
-        <div class="container footer-container">
-            <div class="footer-logo">米良氣農園</div>
-            <ul class="footer-nav">
-                <li><a href="index.html#concept">こだわり</a></li>
-                <li><a href="index.html#products">商品紹介</a></li>
-                <li><a href="https://note.com/meraki_noen" target="_blank">農園日誌 (note)</a></li>
-                <li><a href="about.html">私たちについて</a></li>
-                <li><a href="tokusho.html">特定商取引法に基づく表記</a></li>
-                <li><a href="privacy.html">プライバシーポリシー</a></li>
-            </ul>
-            <div class="copyright">&copy; 2026 Meraki Farm. All Rights Reserved.</div>
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">米良氣</div>
+                <div class="footer-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="index.html#products">Products</a>
+                    <a href="index.html#journal">Journal</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 MERAKI NOEN. All Rights Reserved.</p>
         </div>
     </footer>
-
     <script src="js/script.js"></script>
 </body>
 
