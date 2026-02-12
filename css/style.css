@@ -711,19 +711,8 @@ img {
 /* ==========================================================================
    Message Section (Dictionary Style)
    ========================================================================== */
-.message-container {
-    text-align: center;
-    max-width: 1000px;
-    /* Increased from 800px */
-    width: 100%;
-    margin: 0 auto;
-}
-
-.message-body {
-    text-align: left;
-    display: inline-block;
-    max-width: 100%;
-}
+/* .message-container Moved to Dictionary Style Section */
+/* .message-body Moved to Dictionary Style Section */
 
 .dict-term-container {
     margin-bottom: 40px;
@@ -1305,11 +1294,24 @@ img {
 }
 
 /* Dictionary Style for Origin Section */
+.message-container {
+    text-align: center;
+    max-width: 100%;
+    /* Full width */
+    width: 100%;
+    margin: 0 auto;
+    overflow-x: auto;
+    /* Enable scrolling */
+    direction: rtl;
+    /* Critical: Allow scrolling to the left for vertical-rl content */
+}
+
 .message-body {
     display: inline-block;
     /* Allow width to fit content */
-    width: auto;
-    max-width: 100%;
+    width: max-content;
+    /* Ensure body takes full required width */
+    max-width: none;
     height: auto;
     min-height: 500px;
     /* Ensure enough height for text lines */
@@ -1321,8 +1323,8 @@ img {
     padding: 20px;
     text-align: left;
     /* Top align in vertical mode */
-    overflow-x: auto;
-    /* Allow scroll if needed, instead of hidden */
+    direction: ltr;
+    /* Reset direction for internal content if needed, though vertical-rl overrides mostly */
 }
 
 .dict-block {
