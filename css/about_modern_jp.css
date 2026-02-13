@@ -108,10 +108,13 @@
 }
 
 .mjp-container {
-    max-width: 1200px;
+    max-width: 1000px;
+    /* Reduced from 1200px for more margin */
+    width: 85%;
+    /* Force side margins on all screens */
     margin: 0 auto;
-    padding: 0 8%;
-    /* Increased from 40px to 8% for more side margin */
+    padding: 0;
+    /* Reset padding, rely on width/margin for outer spacing */
     position: relative;
 }
 
